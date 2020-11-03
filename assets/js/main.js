@@ -107,6 +107,27 @@ window.addEventListener("scroll", () => {
         projectsBot.classList.add("show");
     }
 
+    const projectsReact = document.querySelector(".projects-react__title");
+    if (projectsReact.getBoundingClientRect().top < position) {
+        projectsReact.classList.add("show");
+        for (let i = 0; i < headerLinks.length; i++) {
+            headerLinks[i].style.color = "rgb(160, 183, 202)";
+            headerMobileLinks[i].style.color = "rgb(160, 183, 202)";
+        }
+        headerLinks[6].style.color = "#00D646";
+        headerMobileLinks[6].style.color = "#00D646";
+    }
+
+    const projectsReactItems = document.querySelectorAll(".projects-react__item");
+    if (projectsReactItems[0].getBoundingClientRect().top < position) {
+        projectsReactItems[0].classList.add("show");
+    }
+
+    const projectsReactBot = document.querySelector(".projects-react__bot");
+    if (projectsReactBot.getBoundingClientRect().top < position) {
+        projectsReactBot.classList.add("show");
+    }
+
     const skillsItemLine = document.querySelectorAll(".skills__item_line");
     if (skillsItemLine[0].getBoundingClientRect().top < position && window.innerWidth > 450) {
         skillsItemLine[0].style.width = "50%";
@@ -275,7 +296,7 @@ for (let i = 4; i < educExper.length; i++) {
 
 
 
-
+// document
 document.addEventListener("click", () => {
     for (let i = 0; i < educExper.length; i++) {
         educExperInside[i].style.height = "0";
