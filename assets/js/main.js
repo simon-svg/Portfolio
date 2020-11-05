@@ -304,7 +304,7 @@ for (let i = 4; i < educExper.length; i++) {
 
 
 // document
-document.addEventListener("mousedown", () => {
+document.addEventListener("click", () => {
     for (let i = 0; i < educExper.length; i++) {
         educExperInside[i].style.height = "0";
         educExper[i].style.backgroundColor = "rgb(62, 65, 68)";

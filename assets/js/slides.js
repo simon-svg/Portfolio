@@ -112,7 +112,7 @@ headerBurgerMenu.addEventListener("click", (e) => {
 
 
 // document onclick
-document.addEventListener("mousedown", () => {
+document.addEventListener("click", () => {
     mobileNavClose();
     headertBurgerBool = true;
 })
