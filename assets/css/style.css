@@ -387,6 +387,7 @@ education
     font-size: 18px;
     font-family: "Merriweather", sans-serif;
     font-style: italic;
+    text-transform: capitalize;
 }
 .educ-exper__cont_title{
     color: white;

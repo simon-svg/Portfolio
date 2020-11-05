@@ -14,19 +14,23 @@ college.style["margin-top"] = univerHeight + 90 + "px";
 
 
 // section experience content margines
+const fotonWork = document.querySelectorAll(".educ-exper__cont_head_left")[2]
 const foton = document.querySelectorAll(".educ-exper__cont_head_right")[2];
-const haytech = document.querySelectorAll(".educ-exper__cont_head_left")[2];
+const haytech = document.querySelectorAll(".educ-exper__cont_head_left")[3];
 const lucky = document.querySelectorAll(".educ-exper__cont_head_right")[3];
 
+const fotonWorkHeight = fotonWork.clientHeight;
+foton.style["margin-top"] = fotonWorkHeight + 30 + "px";
 const fotonHeight = foton.clientHeight;
-haytech.style["margin-top"] = fotonHeight + 30 + "px";
+haytech.style["margin-top"] = fotonHeight + 60 + "px";
 const haytechHeight = haytech.clientHeight;
-lucky.style["margin-top"] = haytechHeight + 60 + "px";
+lucky.style["margin-top"] = haytechHeight + 90 + "px";
 
 
 
 
 // scrollTop function
+
 const headerLinks = document.querySelectorAll(".header__link");
 const headerMobileLinks = document.querySelectorAll(".header__mobile-link");
 const homeLogo = document.querySelector(".home__logo");
@@ -206,6 +210,9 @@ window.addEventListener("scroll", () => {
         setTimeout(() => {
             educatExpContHead[5].classList.add("show");
         }, 100)
+        setTimeout(() => {
+            educatExpContHead[7].classList.add("show");
+        }, 150)
     }
 
     const CertificProjectsItem = document.querySelectorAll(".certific-projects__item");
@@ -297,7 +304,7 @@ for (let i = 4; i < educExper.length; i++) {
 
 
 // document
-document.addEventListener("click", () => {
+document.addEventListener("mousemove", () => {
     for (let i = 0; i < educExper.length; i++) {
         educExperInside[i].style.height = "0";
         educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
