@@ -96,6 +96,9 @@
     .certific-projects__item:nth-child(2n){
         margin-top: 30px;
     }
+    .educ-exper__cont_bot{
+        text-align: center;
+    }
 
     /* portfolio page */
 

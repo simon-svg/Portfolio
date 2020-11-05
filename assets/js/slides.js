@@ -97,7 +97,7 @@ function mobileNavClose() {
 }
 
 headerBurgerMenu.addEventListener("click", (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     if (headertBurgerBool) {
         mobileNavOpen();
     }
@@ -113,6 +113,6 @@ headerBurgerMenu.addEventListener("click", (e) => {
 
 // document onclick
 document.addEventListener("mousedown", () => {
-    mobileNavClose()
+    mobileNavClose();
     headertBurgerBool = true;
 })
