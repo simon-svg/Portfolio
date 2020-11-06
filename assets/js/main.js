@@ -257,27 +257,37 @@ const educExperArrow = document.querySelectorAll(".educ-exper-mob__item_arrow");
 const educExperIcon = document.querySelectorAll(".educ-exper-mob__item_icon");
 
 // for education
+let selectedElem = null;
 for (let i = 0; i < 4; i++) {
     educExper[i].addEventListener("click", function educExperAdd(e) {
-        e.stopPropagation()
+        e.stopPropagation();
         for (let j = 0; j < 4; j++) {
             if (i !== j) {
                 educExperInside[j].style.height = "0";
                 educExper[j].style.backgroundColor = "rgb(62, 65, 68)";
                 educExperArrow[j].style.backgroundColor = "rgb(72, 74, 77)";
                 educExperIcon[j].style.transform = "rotate(0deg)";
-            }
-            else {
+            } else {
                 educExperInside[i].style.height = "110px";
                 educExper[i].style.backgroundColor = "rgb(72, 74, 77)";
                 educExperArrow[i].style.backgroundColor = "rgb(62, 65, 68)";
                 educExperIcon[i].style.transform = "rotate(180deg)";
             }
         }
+        if(selectedElem === educExper[i]) {
+            educExperInside[i].style.height = "0";
+            educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
+            educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
+            educExperIcon[i].style.transform = "rotate(0deg)";
+            selectedElem = null;
+        } else {
+            selectedElem = educExper[i];
+        }
     })
 }
 
 // for experience
+let selectedElem2 = null;
 for (let i = 4; i < educExper.length; i++) {
     educExper[i].addEventListener("click", function educExperAdd(e) {
         e.stopPropagation()
@@ -295,11 +305,17 @@ for (let i = 4; i < educExper.length; i++) {
                 educExperIcon[i].style.transform = "rotate(180deg)";
             }
         }
+        if(selectedElem2 === educExper[i]) {
+            educExperInside[i].style.height = "0";
+            educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
+            educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
+            educExperIcon[i].style.transform = "rotate(0deg)";
+            selectedElem2 = null;
+        } else {
+            selectedElem2 = educExper[i];
+        }
     })
 }
-
-
-
 
 
 
@@ -311,4 +327,6 @@ document.addEventListener("click", () => {
         educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
         educExperIcon[i].style.transform = "rotate(0deg)";
     }
+    selectedElem = null;
+    selectedElem2 = null;
 })
