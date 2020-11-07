@@ -1,3 +1,15 @@
+// loader
+const loader = document.querySelector(".loader");
+document.body.onload = () => {
+    loader.style.opacity = "0";
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 500)
+}
+
+
+
+
 const anchors = document.querySelectorAll('a[href*="#"]');
 
 for (let anchor of anchors) {
