@@ -268,8 +268,35 @@ section{
     align-items: center;
     border-radius: 50px;
 }
+.home__logo_link{
+    display: flex;
+    justify-content: center;
+}
+.home__svg_letter{
+    position: absolute;
+}
 .home__logo_svg{
     width: 120px;
+}
+.home__svg_border{
+    animation: whirls .5s linear infinite;
+    -webkit-animation: whirls .5s linear infinite;
+}
+@keyframes whirls{
+    from{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
 }
 .home__cont_info{
     margin: 90px 0;

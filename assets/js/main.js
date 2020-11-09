@@ -160,7 +160,7 @@ window.addEventListener("scroll", () => {
             skillsItemLine[8].style.width = "45%";
         }, 400)
     }
-    else if(skillsItemLine[0].getBoundingClientRect().top < position && window.innerWidth <= 450){
+    else if (skillsItemLine[0].getBoundingClientRect().top < position && window.innerWidth <= 450) {
         skillsItemLine[0].style.width = "75%";
         setTimeout(() => {
             skillsItemLine[1].style.width = "70%";
@@ -274,7 +274,7 @@ for (let i = 0; i < 4; i++) {
                 educExperIcon[i].style.transform = "rotate(180deg)";
             }
         }
-        if(selectedElem === educExper[i]) {
+        if (selectedElem === educExper[i]) {
             educExperInside[i].style.height = "0";
             educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
             educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
@@ -305,7 +305,7 @@ for (let i = 4; i < educExper.length; i++) {
                 educExperIcon[i].style.transform = "rotate(180deg)";
             }
         }
-        if(selectedElem2 === educExper[i]) {
+        if (selectedElem2 === educExper[i]) {
             educExperInside[i].style.height = "0";
             educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
             educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
