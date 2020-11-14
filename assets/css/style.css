@@ -551,8 +551,19 @@ footer
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     margin-left: 100px;
+    overflow: hidden;
+    background: linear-gradient(to right, #00D646, #00D646 49%, #ffffff 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position ease .7s;
+    cursor: pointer;
 }
-
+.footer__inside:hover {
+    background-position: 0 100%;
+}
 
 
 
