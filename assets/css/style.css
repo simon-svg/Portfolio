@@ -1,14 +1,22 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .wrapper{
     width: 980px;
     margin: 0 auto;
 }
+
+/* 
+loader 
+*/
 .loader{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #FFF;
+    background-color: rgb(72, 74, 77);
     z-index: 999999;
     opacity: 1;
     transition: opacity ease .5s;
@@ -24,6 +32,62 @@
     justify-content: center;
     align-items: center;
 }
+.loader__infinity {
+    position: relative;
+    width: 125px;
+    height: 60px;
+    animation: loaderAnimation linear 1s infinite;
+    -webkit-animation: loaderAnimation linear 1s infinite;
+}
+.loader__infinity:before,
+.loader__infinity:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;    
+    border: 15px solid #00D646;
+    -moz-border-radius: 50px 50px 0 50px;
+    border-radius: 50px 50px 0 50px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+ 
+.loader__infinity:after {
+    left: auto;
+    right: 0;
+    -moz-border-radius: 50px 50px 50px 0;
+    border-radius: 50px 50px 50px 0;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+@keyframes loaderAnimation{
+    from{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+    to{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+
+
+
+
 .flex{
     display: flex;
     justify-content: space-between;
@@ -31,6 +95,11 @@
 }
 .logo__svg{
     width: 50px;
+    transition: filter ease .2s;
+    -webkit-transition: filter ease .2s;
+    -moz-transition: filter ease .2s;
+    -ms-transition: filter ease .2s;
+    -o-transition: filter ease .2s;
 }
 .green{
     color: #00D646;
@@ -122,6 +191,13 @@ header
     align-items: center;
     overflow: hidden;
     transition: height ease 0.5s;
+}
+.logo__link{
+    display: block;
+}
+.logo__link:hover .logo__svg{
+    filter: brightness(125%);
+    -webkit-filter: brightness(125%);
 }
 .header__cont,
 .headert__nav{
@@ -281,7 +357,7 @@ section{
     color: #00D646;
     text-transform: uppercase;
     font-family: "Merriweather", sans-serif;
-    font-weight: 200;
+    font-weight: 900;
     letter-spacing: 7px;
     font-size: 22px;
     font-style: italic;

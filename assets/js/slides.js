@@ -1,8 +1,11 @@
 // loader
 const loader = document.querySelector(".loader");
+const body = document.querySelector("body");
+body.style["overflow-y"] = "hidden";
 document.body.onload = () => {
     loader.style.opacity = "0";
     setTimeout(() => {
+        body.style["overflow-y"] = "scroll";
         loader.style.display = "none";
     }, 500)
 }
@@ -10,18 +13,18 @@ document.body.onload = () => {
 
 
 
-const anchors = document.querySelectorAll('a[href*="#"]');
+// const anchors = document.querySelectorAll('a[href*="#"]');
 
-for (let anchor of anchors) {
-    anchor.addEventListener("click", function (event) {
-        event.preventDefault();
-        const blockId = anchor.getAttribute("href");
-        document.querySelector("" + blockId).scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        })
-    })
-}
+// for (let anchor of anchors) {
+//     anchor.addEventListener("click", function (event) {
+//         event.preventDefault();
+//         const blockId = anchor.getAttribute("href");
+//         document.querySelector("" + blockId).scrollIntoView({
+//             behavior: "smooth",
+//             block: "start",
+//         })
+//     })
+// }
 
 
 
@@ -79,7 +82,7 @@ const headerBurgerMenuLine = document.querySelectorAll(".header__burger-menu_ite
 let headertBurgerBool = true;
 
 
-function mobileNavOpen(){
+function mobileNavOpen() {
     headertMobileCont.style.height = "auto";
     headertMobileCont.style.padding = "20px 0";
     headerBurgerMenuLine[0].style.margin = "0 0 0 0";
