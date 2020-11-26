@@ -61,7 +61,7 @@ let indexPhone = 0;
 window.addEventListener("scroll", () => {
     const position = window.innerHeight / 1.10;
 
-    if (homeInfoItem[0].getBoundingClientRect().top < position) {
+    if (homeInfoItem[0].getBoundingClientRect().top < window.innerHeight) {
         if (indexInfoBool) {
             indexInfoBool = false;
             setTimeout(() => {
@@ -87,7 +87,7 @@ window.addEventListener("scroll", () => {
                         }, 70);
                     }, 3000);
                 }, 2500);
-            }, 1500)
+            }, 100)
         }
     }
 

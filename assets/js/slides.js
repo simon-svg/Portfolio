@@ -24,28 +24,9 @@ document.body.onload = () => {
                     clearInterval(frontInterval)
                 }
             }, 70);
-        }, 1500)
+        }, 1000)
     }
 }
-
-//     setTimeout(() => {
-//         const pop = setInterval(() => {
-//             titleAnim.innerHTML = titleAnim.innerHTML.slice(0, titleAnim.innerHTML.length - 1);
-//             if (titleAnim.innerHTML.length === 0) {
-//                 clearInterval(pop);
-//                 index = 0;
-//                 setTimeout(() => {
-//                     const showInterval = setInterval(() => {
-//                         titleAnim.innerHTML += arrProjects[index++];
-//                         if (index === arrProjects.length) {
-//                             clearInterval(showInterval)
-//                         }
-//                     }, 70);
-//                 }, 1000)
-//             }
-//         }, 50);
-//     }, 2000);
-
 
 
 
