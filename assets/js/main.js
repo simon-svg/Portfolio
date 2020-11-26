@@ -34,8 +34,63 @@ lucky.style["margin-top"] = haytechHeight + 90 + "px";
 const headerLinks = document.querySelectorAll(".header__link");
 const headerMobileLinks = document.querySelectorAll(".header__mobile-link");
 const homeLogo = document.querySelector(".home__logo");
+const homeInfoItem = document.querySelectorAll(".home__info_item");
+const homeContLink = document.querySelector(".home__cont_link");
+const skillsTitle = document.querySelector(".skills__title");
+const educationTitle = document.querySelector(".education__title");
+const certificateTitle = document.querySelector(".certificate__title");
+const experienceTitle = document.querySelector(".experience__title");
+const projectsTitle = document.querySelector(".projects__title");
+const projectsBot = document.querySelector(".projects__bot");
+const projectsReact = document.querySelector(".projects-react__title");
+const projectsReactItems = document.querySelectorAll(".projects-react__item");
+const projectsReactBot = document.querySelector(".projects-react__bot");
+const skillsItemLine = document.querySelectorAll(".skills__item_line");
+const educatExpContHead = document.querySelectorAll(".educ-exper__cont_head")
+const CertificProjectsItem = document.querySelectorAll(".certific-projects__item");
+const educExperMobCont = document.querySelectorAll(".educ-exper-mob__cont");
+const arrInfo = ["Y", "e", "a", "r", " ", "o", "f", " ", "b", "i", "r", "t", "h", " ", "-", " ", "F", "e", "b", "r", "u", "a", "r", "y", "1", "7", ",", "2", "0", "0", "0", '<span class="green">.</span>'];
+let indexInfo = 0;
+let indexInfoBool = true;
+const arrEmail = ["E", "-", "m", "a", "i", "l", " ", "-", " ", "s", "i", "m", "o", "n", " ", "k", "a", "r", "a", "p", "e", "t", "y", "a", "n", ".", "2", "0", "0", "0", "@", 'm', "a", "i", "l", ".", "r", "u", '<span class="green">.</span>'];
+let indexEmail = 0;
+const arrPhone = ["P", "h", "o", "n", "e", " ", "N", "u", "m", "b", "e", "r", " ", "+", "(", "3", "7", "4", ")", "5", "5", "-", "3", "2", "-", "1", "4", "-", "1", "3", '<span class="green">.</span>'];
+let indexPhone = 0;
+
+
 window.addEventListener("scroll", () => {
     const position = window.innerHeight / 1.10;
+
+    if (homeInfoItem[0].getBoundingClientRect().top < position) {
+        if (indexInfoBool) {
+            indexInfoBool = false;
+            setTimeout(() => {
+                const infoInterval = setInterval(() => {
+                    homeInfoItem[0].innerHTML += arrInfo[indexInfo++];
+                    if (indexInfo === arrInfo.length) {
+                        clearInterval(infoInterval)
+                    }
+                }, 70);
+                setTimeout(() => {
+                    const emailInterval = setInterval(() => {
+                        homeInfoItem[1].innerHTML += arrEmail[indexEmail++];
+                        if (indexEmail === arrEmail.length) {
+                            clearInterval(emailInterval)
+                        }
+                    }, 70);
+                    setTimeout(() => {
+                        const phoneInterval = setInterval(() => {
+                            homeInfoItem[2].innerHTML += arrPhone[indexPhone++];
+                            if (indexPhone === arrPhone.length) {
+                                clearInterval(phoneInterval)
+                            }
+                        }, 70);
+                    }, 3000);
+                }, 2500);
+            }, 1500)
+        }
+    }
+
 
     if (homeLogo.getBoundingClientRect().top < position) {
         for (let i = 0; i < headerLinks.length; i++) {
@@ -46,12 +101,10 @@ window.addEventListener("scroll", () => {
         headerMobileLinks[0].style.color = "#00D646";
     }
 
-    const homeContLink = document.querySelector(".home__cont_link");
     if (homeContLink.getBoundingClientRect().top < position) {
         homeContLink.classList.add("show");
     }
 
-    const skillsTitle = document.querySelector(".skills__title");
     if (skillsTitle.getBoundingClientRect().top < position) {
         skillsTitle.classList.add("show");
         for (let i = 0; i < headerLinks.length; i++) {
@@ -73,7 +126,6 @@ window.addEventListener("scroll", () => {
         headerMobileLinks[2].style.color = "#00D646";
     }
 
-    const certificateTitle = document.querySelector(".certificate__title");
     if (certificateTitle.getBoundingClientRect().top < position) {
         certificateTitle.classList.add("show");
         for (let i = 0; i < headerLinks.length; i++) {
@@ -84,7 +136,6 @@ window.addEventListener("scroll", () => {
         headerMobileLinks[3].style.color = "#00D646";
     }
 
-    const experienceTitle = document.querySelector(".experience__title");
     if (experienceTitle.getBoundingClientRect().top < position) {
         experienceTitle.classList.add("show");
         for (let i = 0; i < headerLinks.length; i++) {
@@ -95,7 +146,6 @@ window.addEventListener("scroll", () => {
         headerMobileLinks[4].style.color = "#00D646";
     }
 
-    const projectsTitle = document.querySelector(".projects__title");
     if (projectsTitle.getBoundingClientRect().top < position) {
         projectsTitle.classList.add("show");
         for (let i = 0; i < headerLinks.length; i++) {
@@ -106,12 +156,10 @@ window.addEventListener("scroll", () => {
         headerMobileLinks[5].style.color = "#00D646";
     }
 
-    const projectsBot = document.querySelector(".projects__bot");
     if (projectsBot.getBoundingClientRect().top < position) {
         projectsBot.classList.add("show");
     }
 
-    const projectsReact = document.querySelector(".projects-react__title");
     if (projectsReact.getBoundingClientRect().top < position) {
         projectsReact.classList.add("show");
         for (let i = 0; i < headerLinks.length; i++) {
@@ -122,17 +170,14 @@ window.addEventListener("scroll", () => {
         headerMobileLinks[6].style.color = "#00D646";
     }
 
-    const projectsReactItems = document.querySelectorAll(".projects-react__item");
     if (projectsReactItems[0].getBoundingClientRect().top < position) {
         projectsReactItems[0].classList.add("show");
     }
 
-    const projectsReactBot = document.querySelector(".projects-react__bot");
     if (projectsReactBot.getBoundingClientRect().top < position) {
         projectsReactBot.classList.add("show");
     }
 
-    const skillsItemLine = document.querySelectorAll(".skills__item_line");
     if (skillsItemLine[0].getBoundingClientRect().top < position && window.innerWidth > 450) {
         skillsItemLine[0].style.width = "50%";
         setTimeout(() => {
@@ -188,7 +233,6 @@ window.addEventListener("scroll", () => {
         }, 400)
     }
 
-    const educatExpContHead = document.querySelectorAll(".educ-exper__cont_head")
     if (educatExpContHead[0].getBoundingClientRect().top < position) {
         educatExpContHead[0].classList.add("show");
         setTimeout(() => {
@@ -215,7 +259,6 @@ window.addEventListener("scroll", () => {
         }, 150)
     }
 
-    const CertificProjectsItem = document.querySelectorAll(".certific-projects__item");
     if (CertificProjectsItem[0].getBoundingClientRect().top < position) {
         CertificProjectsItem[0].classList.add("show");
         setTimeout(() => {
@@ -236,7 +279,6 @@ window.addEventListener("scroll", () => {
         }, 150)
     }
 
-    const educExperMobCont = document.querySelectorAll(".educ-exper-mob__cont");
     if (educExperMobCont[0].getBoundingClientRect().top < position) {
         educExperMobCont[0].classList.add("show");
     }

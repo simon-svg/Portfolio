@@ -1,30 +1,50 @@
 // loader
 const loader = document.querySelector(".loader");
 const body = document.querySelector("body");
+
+const homeSubtitle = document.querySelector(".home__subtitle");
+let homeSubtitleInner = "";
+const arrFront = ["f", "r", "o", "n", "t", "-", "e", "n", "d", " ", "d", "e", "v", "e", "l", "o", "p", "e", "r"];
+let index = 0;
+
 body.style["overflow-y"] = "hidden";
 document.body.onload = () => {
     loader.style.opacity = "0";
     setTimeout(() => {
         body.style["overflow-y"] = "scroll";
         loader.style.display = "none";
+        document.querySelector(".loader__infinity").remove()
     }, 500)
+
+    if (document.title === "Portfolio") {
+        setTimeout(() => {
+            const frontInterval = setInterval(() => {
+                homeSubtitle.innerHTML += arrFront[index++];
+                if (index === arrFront.length) {
+                    clearInterval(frontInterval)
+                }
+            }, 70);
+        }, 1500)
+    }
 }
 
-
-
-
-// const anchors = document.querySelectorAll('a[href*="#"]');
-
-// for (let anchor of anchors) {
-//     anchor.addEventListener("click", function (event) {
-//         event.preventDefault();
-//         const blockId = anchor.getAttribute("href");
-//         document.querySelector("" + blockId).scrollIntoView({
-//             behavior: "smooth",
-//             block: "start",
-//         })
-//     })
-// }
+//     setTimeout(() => {
+//         const pop = setInterval(() => {
+//             titleAnim.innerHTML = titleAnim.innerHTML.slice(0, titleAnim.innerHTML.length - 1);
+//             if (titleAnim.innerHTML.length === 0) {
+//                 clearInterval(pop);
+//                 index = 0;
+//                 setTimeout(() => {
+//                     const showInterval = setInterval(() => {
+//                         titleAnim.innerHTML += arrProjects[index++];
+//                         if (index === arrProjects.length) {
+//                             clearInterval(showInterval)
+//                         }
+//                     }, 70);
+//                 }, 1000)
+//             }
+//         }, 50);
+//     }, 2000);
 
 
 

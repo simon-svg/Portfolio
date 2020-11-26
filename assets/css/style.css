@@ -352,8 +352,13 @@ section{
     font-weight: 800;
     font-family: "Roboto", sans-serif;
 }
-.home__subtitle{
+.home__subtitle_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 120px 0 180px;
+}
+.home__subtitle{
     color: #00D646;
     text-transform: uppercase;
     font-family: "Merriweather", sans-serif;
@@ -361,6 +366,27 @@ section{
     letter-spacing: 7px;
     font-size: 22px;
     font-style: italic;
+}
+.home__subtitle_cursor{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    animation: subtitleCursor ease .7s infinite;
+    -webkit-animation: subtitleCursor ease .7s infinite;
+}
+@keyframes subtitleCursor{
+    0%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 .home__cont{
     width: 820px;
