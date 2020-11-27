@@ -340,7 +340,6 @@ for (let i = 0; i < 4; i++) {
         }
     })
 }
-
 // for experience
 let selectedElem2 = null;
 for (let i = 4; i < educExper.length; i++) {
@@ -371,6 +370,10 @@ for (let i = 4; i < educExper.length; i++) {
         }
     })
 }
+
+
+
+
 
 
 
