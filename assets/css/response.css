@@ -8,6 +8,13 @@
     .header__burger-menu{
         display: flex;
     }
+    .home__cont_img {
+        display: none;
+    }
+    .home__btn{
+        animation: btnScale .5s linear infinite;
+        -webkit-animation: btnScale .5s linear infinite;
+    }
 }
 @media only screen and (max-width: 870px){
     .home__cont{

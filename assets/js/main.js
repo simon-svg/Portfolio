@@ -49,6 +49,7 @@ const skillsItemLine = document.querySelectorAll(".skills__item_line");
 const educatExpContHead = document.querySelectorAll(".educ-exper__cont_head")
 const CertificProjectsItem = document.querySelectorAll(".certific-projects__item");
 const educExperMobCont = document.querySelectorAll(".educ-exper-mob__cont");
+const contactTitle = document.querySelector(".contact__title");
 const arrInfo = ["Y", "e", "a", "r", " ", "o", "f", " ", "b", "i", "r", "t", "h", " ", "-", " ", "F", "e", "b", "r", "u", "a", "r", "y", "1", "7", ",", "2", "0", "0", "0", '<span class="green">.</span>'];
 let indexInfo = 0;
 let indexInfoBool = true;
@@ -286,6 +287,18 @@ window.addEventListener("scroll", () => {
     if (educExperMobCont[1].getBoundingClientRect().top < position) {
         educExperMobCont[1].classList.add("show");
     }
+
+
+
+    if (contactTitle.getBoundingClientRect().top < position) {
+        contactTitle.classList.add("show");
+        for (let i = 0; i < headerLinks.length; i++) {
+            headerLinks[i].style.color = "rgb(160, 183, 202)";
+            headerMobileLinks[i].style.color = "rgb(160, 183, 202)";
+        }
+        headerLinks[7].style.color = "#00D646";
+        headerMobileLinks[7].style.color = "#00D646";
+    }
 })
 
 
@@ -371,4 +384,135 @@ document.addEventListener("click", () => {
     }
     selectedElem = null;
     selectedElem2 = null;
+})
+
+
+
+
+
+
+
+
+
+
+// form validation 
+const data = {
+    name: {
+        value: "",
+        valid: false,
+        touched: false,
+    },
+    email: {
+        value: "",
+        valid: false,
+        touched: false,
+    },
+    message: {
+        value: "",
+        valid: false,
+        touched: false,
+    },
+}
+
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+const form = document.querySelector('.form');
+const fields = form.querySelectorAll('.form__input');
+const formBtn = document.querySelector(".form__btn");
+
+function validete(field) {
+    switch (field.name) {
+        case "name":
+            return field.value.length > 0;
+        case "email":
+            return validateEmail(field.value);
+        case "message":
+            return 0 < field.value.length && field.value.length < 300;
+    }
+}
+
+fields.forEach((field) => {
+    field.addEventListener('input', (e) => {
+        data[e.target.name].value = e.target.value;
+        if (data[e.target.name].touched === false) {
+            data[e.target.name].touched = true;
+        }
+        data[e.target.name].valid = validete(e.target);
+    });
+});
+
+
+fields.forEach((field, i) => {
+    field.addEventListener("input", (e) => {
+        if (data[field.name].touched) {
+            if (data[field.name].valid === false) {
+                field.style["border-bottom"] = "5px inset red";
+            }
+            else {
+                field.style["border-bottom"] = "5px inset #00D646";
+            }
+        }
+        if (data.name.valid && data.email.valid && data.message.valid) {
+            formBtn.setAttribute("class", "form__btn adjective")
+            formBtn.removeAttribute("disabled", "true")
+        }
+        else{
+            formBtn.setAttribute("class", "form__btn disabled")
+            formBtn.setAttribute("disabled", "true")
+        }
+    })
+})
+
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const {name, email, message} = data;
+
+    const body = {
+        name: name.value,
+        email: email.value,
+        message: email.value
+    };
+
+    createMessage(body);
+
+})
+
+
+function createMessage(message) {
+    return fetch('https://portfolio-66dac.firebaseio.com/messages.json', {
+        method: "POST",
+        body: JSON.stringify(message),
+        headers: {
+            "Content-Type": "application/json" 
+        }
+    })
+        .then((response) => response.json())
+        .then((response) => {
+            message.id = response.name;
+            return message;
+        })
+}
+
+
+
+
+
+
+
+
+// paralax mouse move
+const dots = document.querySelectorAll(".home__cont_img");
+document.addEventListener("mousemove", (e) => {
+    dots.forEach(layer => {
+        const speed = layer.getAttribute("data-speed");
+
+        const x = (window.innerWidth - e.pageX * speed) / 120;
+        const y = (window.innerHeight - e.pageY * speed) / 120;
+
+        layer.style.transform = `translate(${x}px, ${y}px)`
+    })
 })
