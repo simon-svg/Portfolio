@@ -694,7 +694,6 @@ contact
     color: #808080;
     font-size: 20px;
     font-family: "Merriweather", sans-serif;
-    text-transform: capitalize;
     padding: 20px 20px 15px;
     border: none;
     border-bottom: 5px inset #ffffff;
@@ -705,6 +704,9 @@ contact
     -o-border-radius: 10px;
     outline: none;
     box-sizing: border-box;
+}
+.form__name{
+    text-transform: capitalize;
 }
 .form__message,
 .form__btn{

@@ -457,7 +457,7 @@ fields.forEach((field, i) => {
         }
         if (data.name.valid && data.email.valid && data.message.valid) {
             formBtn.setAttribute("class", "form__btn adjective")
-            formBtn.removeAttribute("disabled", "true")
+            formBtn.removeAttribute("disabled", "false")
         }
         else{
             formBtn.setAttribute("class", "form__btn disabled")
@@ -474,11 +474,10 @@ form.addEventListener("submit", (e) => {
     const body = {
         name: name.value,
         email: email.value,
-        message: email.value
+        message: message.value
     };
 
-    createMessage(body);
-
+    createMessage(body)
 })
 
 
@@ -490,10 +489,23 @@ function createMessage(message) {
             "Content-Type": "application/json" 
         }
     })
-        .then((response) => response.json())
+        .then((response) => {
+            formBtn.setAttribute("class", "form__btn disabled")
+            formBtn.setAttribute("disabled", "true")
+            return response.json()
+        })
         .then((response) => {
             message.id = response.name;
             return message;
+        })
+        .then(() => {
+            fields.forEach((field) => {
+                field.value = '';
+                data[field.name].touched = false;
+                data[field.name].valid = false;
+                data[field.name].value = '';
+                field.style["border-bottom"] = "5px inset #ffffff";
+            });
         })
 }
 
