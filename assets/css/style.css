@@ -411,6 +411,7 @@ section{
 }
 .home__cont_info{
     margin: 90px 0;
+    height: 105px;
 }
 .home__info_item{
     font-family: "Roboto", sans-serif;

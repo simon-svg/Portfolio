@@ -70,6 +70,9 @@
     .home__cont{
         padding: 40px;
     }
+    .home__cont_info{
+        height: 90px;
+    }
     .home__info_item{
         line-height: 30px;
         font-size: 18px;
@@ -115,6 +118,7 @@
     }
     .home__cont_info{
         margin: 20px 0;
+        height: 60px;
     }
     .home__info_item{
         line-height: 20px;
