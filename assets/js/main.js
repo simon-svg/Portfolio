@@ -50,7 +50,7 @@ const educatExpContHead = document.querySelectorAll(".educ-exper__cont_head")
 const CertificProjectsItem = document.querySelectorAll(".certific-projects__item");
 const educExperMobCont = document.querySelectorAll(".educ-exper-mob__cont");
 const contactTitle = document.querySelector(".contact__title");
-const arrInfo = ["Y", "e", "a", "r", " ", "o", "f", " ", "b", "i", "r", "t", "h", " ", "-", " ", "F", "e", "b", "r", "u", "a", "r", "y", "1", "7", ",", "2", "0", "0", "0", '<span class="green">.</span>'];
+const arrInfo = ["Y", "e", "a", "r", " ", "o", "f", " ", "b", "i", "r", "t", "h", " ", "-", " ", "F", "e", "b", "r", "u", "a", "r", "y", "1", "7", ".", " ", "2", "0", "0", "0", '<span class="green">.</span>'];
 let indexInfo = 0;
 let indexInfoBool = true;
 const arrEmail = ["E", "-", "m", "a", "i", "l", " ", "-", " ", "s", "i", "m", "o", "n", " ", "k", "a", "r", "a", "p", "e", "t", "y", "a", "n", ".", "2", "0", "0", "0", "@", 'm', "a", "i", "l", ".", "r", "u", '<span class="green">.</span>'];
@@ -340,6 +340,7 @@ for (let i = 0; i < 4; i++) {
         }
     })
 }
+
 // for experience
 let selectedElem2 = null;
 for (let i = 4; i < educExper.length; i++) {
@@ -372,11 +373,6 @@ for (let i = 4; i < educExper.length; i++) {
 }
 
 
-
-
-
-
-
 // document
 document.addEventListener("click", () => {
     for (let i = 0; i < educExper.length; i++) {
@@ -388,11 +384,6 @@ document.addEventListener("click", () => {
     selectedElem = null;
     selectedElem2 = null;
 })
-
-
-
-
-
 
 
 
@@ -447,7 +438,6 @@ fields.forEach((field) => {
     });
 });
 
-
 fields.forEach((field, i) => {
     field.addEventListener("input", (e) => {
         if (data[field.name].touched) {
@@ -469,7 +459,6 @@ fields.forEach((field, i) => {
     })
 })
 
-
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     const {name, email, message} = data;
@@ -482,7 +471,6 @@ form.addEventListener("submit", (e) => {
 
     createMessage(body)
 })
-
 
 function createMessage(message) {
     return fetch('https://portfolio-66dac.firebaseio.com/messages.json', {
@@ -511,11 +499,6 @@ function createMessage(message) {
             });
         })
 }
-
-
-
-
-
 
 
 

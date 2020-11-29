@@ -47,8 +47,6 @@
     .educ-exper-mob__cont{
         display: flex;
     }
-}
-@media only screen and (max-width: 870px){
     .educ-exper-mob__item_arrow{
         position: unset;
     }
@@ -58,6 +56,26 @@
     }
     .educ-exper-mob__item_name{
         margin: 0 0 10px 0;
+    }
+
+    /* 
+    contact 
+    */
+    .form__input,
+    .form__btn{
+        padding: 10px;
+        font-size: 15px;
+    }
+    .form__name,
+    .form__email{
+        width: calc(50% - 15px);
+    }
+    .form__text {
+        padding-bottom: 200px;
+    }
+    .form__message,
+    .form__btn{
+        margin-top: 20px;
     }
 }
 @media only screen and (max-width: 600px){
@@ -110,8 +128,22 @@
         text-align: center;
     }
 
-    /* portfolio page */
+    /* 
+    contact 
+    */
+    .form__name-email{
+        flex-wrap: wrap;
+    }
+    .form__input{
+        width: 100%;
+    }
+    .form__email{
+        margin-top: 20px;
+    }
 
+    /* 
+    portfolio page 
+    */
     .projects-page__cont{
         flex-wrap: wrap;
     }
@@ -157,5 +189,13 @@
     }
     .home__subtitle{
         letter-spacing: 3px;
+    }
+    .form__text{
+        padding-bottom: 130px;
+    }
+}
+@media only screen and (max-width: 375px){
+    section {
+        padding: 70px 0;
     }
 }

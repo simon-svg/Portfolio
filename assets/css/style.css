@@ -56,7 +56,6 @@ loader
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
- 
 .loader__infinity:after {
     left: auto;
     right: 0;
@@ -84,8 +83,6 @@ loader
         -o-transform: rotate(360deg);
 }
 }
-
-
 
 
 .flex{
@@ -342,7 +339,6 @@ section{
     font-size: 22px;
     font-style: italic;
 }
-
 .home__cont{
     width: 820px;
     margin: 0 auto;
@@ -785,9 +781,6 @@ footer
 }
 
 
-
-
-
 /* opacityes & transforms*/
 
 .title,
@@ -853,8 +846,6 @@ projects page
 .footer__projects{
     margin-top: 0;
 }
-
-
 
 
 
