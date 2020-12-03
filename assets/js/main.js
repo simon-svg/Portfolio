@@ -50,10 +50,10 @@ const educatExpContHead = document.querySelectorAll(".educ-exper__cont_head")
 const CertificProjectsItem = document.querySelectorAll(".certific-projects__item");
 const educExperMobCont = document.querySelectorAll(".educ-exper-mob__cont");
 const contactTitle = document.querySelector(".contact__title");
-const arrInfo = ["Y", "e", "a", "r", " ", "o", "f", " ", "b", "i", "r", "t", "h", " ", "-", " ", "F", "e", "b", "r", "u", "a", "r", "y", "1", "7", ".", " ", "2", "0", "0", "0", '<span class="green">.</span>'];
+const arrInfo = ["Y", "e", "a", "r", " ", "o", "f", " ", "b", "i", "r", "t", "h", " ", "-", " ", "F", "e", "b", "r", "u", "a", "r", "y", " ", "1", "7", ".", " ", "2", "0", "0", "0", '<span class="green">.</span>'];
 let indexInfo = 0;
 let indexInfoBool = true;
-const arrEmail = ["E", "-", "m", "a", "i", "l", " ", "-", " ", "s", "i", "m", "o", "n", " ", "k", "a", "r", "a", "p", "e", "t", "y", "a", "n", ".", "2", "0", "0", "0", "@", 'm', "a", "i", "l", ".", "r", "u", '<span class="green">.</span>'];
+const arrEmail = ["G", "m", "a", "i", "l", " ", "-", " ", "s", "i", "m", "o", "n", "k", "a", "r", "a", "p", "e", "t", "y", "a", "n", "6", "0", "5", "@", "g", 'm', "a", "i", "l", ".", "c", "o", "m", '<span class="green">.</span>'];
 let indexEmail = 0;
 const arrPhone = ["P", "h", "o", "n", "e", " ", "N", "u", "m", "b", "e", "r", " ", "+", "(", "3", "7", "4", ")", "5", "5", "-", "3", "2", "-", "1", "4", "-", "1", "3", '<span class="green">.</span>'];
 let indexPhone = 0;
