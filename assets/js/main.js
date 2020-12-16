@@ -29,6 +29,37 @@ lucky.style["margin-top"] = haytechHeight + 90 + "px";
 
 
 
+// buttons animation
+function create(what, where, classname) {
+    const item = document.createElement(what);
+    item.setAttribute("class", classname);
+    where.append(item)
+    return item;
+}
+const btns = document.querySelectorAll(".btn");
+btns.forEach((item) => {
+    item.addEventListener("mouseenter", (e) => {
+        const Dot = create("span", item, "btn__dot");
+        Dot.style.top = e.offsetY + "px";
+        Dot.style.left = e.offsetX + "px";
+        item.addEventListener("mouseleave", (e) => {
+            Dot.style.top = e.offsetY + "px";
+            Dot.style.left = e.offsetX + "px";
+            Dot.style.animation = "btnDotAnimNone linear .3s forwards";
+            setTimeout(() => {
+                item.querySelectorAll(".btn__dot").forEach((item2) => {
+                    item2.remove();
+                })
+            }, 300)
+        })
+    })
+})
+
+
+
+
+
+
 // scrollTop function
 
 const headerLinks = document.querySelectorAll(".header__link");
@@ -452,7 +483,7 @@ fields.forEach((field, i) => {
             formBtn.setAttribute("class", "form__btn adjective")
             formBtn.removeAttribute("disabled", "false")
         }
-        else{
+        else {
             formBtn.setAttribute("class", "form__btn disabled")
             formBtn.setAttribute("disabled", "true")
         }
@@ -461,7 +492,7 @@ fields.forEach((field, i) => {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const {name, email, message} = data;
+    const { name, email, message } = data;
 
     const body = {
         name: name.value,
@@ -477,7 +508,7 @@ function createMessage(message) {
         method: "POST",
         body: JSON.stringify(message),
         headers: {
-            "Content-Type": "application/json" 
+            "Content-Type": "application/json"
         }
     })
         .then((response) => {
