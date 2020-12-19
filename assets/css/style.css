@@ -146,6 +146,7 @@ loader
     width: 250px;
     font-size: 23px;
     transition: all ease 0.5s;
+    overflow: hidden;
     outline: none;
     cursor: pointer;
     position: relative;
@@ -242,12 +243,18 @@ header
     margin-left: 25px;
     position: relative;
     padding-bottom: 5px;
+    transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    -moz-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -o-transform: translateY(3px);
 }
 .header__item:first-child{
     margin-left: 0;
 }
 .header__link,
-.header__mobile-link{
+.header__mobile-link,
+.header__btn_span{
     color: var(--link);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -275,15 +282,33 @@ header
     width: 100%;
     left: 0;
 }
-.header__panel{
+.header__btn{
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    margin-right: 20px;
+}
+.header__btn_span{
+    transition: color ease .5s;
+    -webkit-transition: color ease .5s;
+    -moz-transition: color ease .5s;
+    -ms-transition: color ease .5s;
+    -o-transition: color ease .5s;
+}
+.header__btn:hover .header__btn_span{
+    color: var(--white);
+}
+.header__panel_cont{
     position: fixed;
     right: 0;
+    z-index: 1000;
+}
+.header__panel{
     width: 70px;
     height: 70px;
     background-color: var(--dark-gray);
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,9 +360,6 @@ header
     flex-direction: column;
     align-items: center;
 }
-.header__mobile-item{
-    margin-left: 0;
-}
 
 /* 
 scroll-top 
@@ -351,6 +373,7 @@ scroll-top
     display: none;
 }
 .scroll-top__link{
+    display: block;
     opacity: 0.3;
 }
 .scroll-top__link:hover{
@@ -814,7 +837,6 @@ footer
     background-position: 0 100%;
 }
 
-
 /* opacityes & transforms*/
 
 .title,
@@ -836,10 +858,8 @@ footer
     -o-transform: translateY(0);
 }
 
-
-
 /*
-projects page
+projects page ----------------------------------------------------------------------------------------------------------------------
 */
 
 .projects-page{
@@ -881,10 +901,8 @@ projects page
     margin-top: 0;
 }
 
-
-
 /* 
-projects-react-page 
+projects-react-page ---------------------------------------------------------------------------------------------------------------------
 */
 
 .projects-react-page{

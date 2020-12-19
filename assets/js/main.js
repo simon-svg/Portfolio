@@ -90,9 +90,8 @@ const arrPhone = ["P", "h", "o", "n", "e", " ", "N", "u", "m", "b", "e", "r", " 
 let indexPhone = 0;
 
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", (e) => {
     const position = window.innerHeight / 1.10;
-
     if (homeInfoItem[0].getBoundingClientRect().top < window.innerHeight) {
         if (indexInfoBool) {
             indexInfoBool = false;
@@ -544,4 +543,64 @@ document.addEventListener("mousemove", (e) => {
 
         layer.style.transform = `translate(${x}px, ${y}px)`
     })
+})
+
+
+
+
+
+
+
+
+
+
+
+// header navigation button
+const headerBtn = document.querySelector(".header__btn");
+const recognizer = new webkitSpeechRecognition();
+recognizer.interimResults = true;
+recognizer.lang = 'en-US';
+let all = "";
+const synth = window.speechSynthesis;
+
+
+recognizer.onresult = function (event) {
+    let result = event.results[event.resultIndex];
+    all = result[0].transcript;
+    if (result.isFinal) {
+        if (result[0].transcript == "Home" || result[0].transcript == "home" || result[0].transcript == "HOME") {
+            document.querySelector(".home__title").scrollIntoView()
+        }
+        else if (result[0].transcript == "Skills" || result[0].transcript == "skills" || result[0].transcript == "kids" || result[0].transcript == "he's" || result[0].transcript == "Chiefs" || result[0].transcript == "keys" || result[0].transcript == "cheese" || result[0].transcript == "chief" || result[0].transcript == "Kansas" || result[0].transcript == "cuse" || result[0].transcript == "excuse") {
+            skillsTitle.scrollIntoView()
+        }
+        else if (result[0].transcript == "education" || result[0].transcript == "Education") {
+            educationTitle.scrollIntoView()
+        }
+        else if (result[0].transcript == "certificate" || result[0].transcript == "Certificate" || result[0].transcript == "certification") {
+            certificateTitle.scrollIntoView()
+        }
+        else if (result[0].transcript == "experience" || result[0].transcript == "Experience" || result[0].transcript == "aspasians") {
+            experienceTitle.scrollIntoView()
+        }
+        else if (result[0].transcript == "projects" || result[0].transcript == "Projects" || result[0].transcript == "project") {
+            projectsTitle.scrollIntoView()
+        }
+        else if (result[0].transcript == "project react" || result[0].transcript == "Projects React" || result[0].transcript == "projects react") {
+            projectsReact.scrollIntoView()
+        }
+        else if (result[0].transcript == "contact" || result[0].transcript == "Contact" || result[0].transcript == "contacts") {
+            contactTitle.scrollIntoView()
+        }
+        else {
+            const utterance1 = new SpeechSynthesisUtterance(`sorry you say ${all}`);
+            synth.speak(utterance1);
+        }
+    }
+    else {
+        console.log('Промежуточный результат: ', result[0].transcript);
+    }
+};
+headerBtn.addEventListener("click", () => {
+    recognizer.start();
 })

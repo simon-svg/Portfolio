@@ -1,3 +1,18 @@
+@media only screen and (max-width: 1200px){
+    .home-header__list{
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+    .header__btn{
+        margin-right: 5px;
+    }
+    .header__item{
+        margin-left: 20px;
+    }
+    .header__mobile-item{
+        margin-left: 0;
+    }
+}
 @media only screen and (max-width: 985px){
     .wrapper{
         width: 95%;
@@ -14,6 +29,9 @@
     .home__btn{
         animation: btnScale .5s linear infinite;
         -webkit-animation: btnScale .5s linear infinite;
+    }
+    .header__btn{
+        display: none;
     }
 }
 @media only screen and (max-width: 870px){
