@@ -598,7 +598,7 @@ recognizer.onresult = function (event) {
         }
     }
     else {
-        console.log('Промежуточный результат: ', result[0].transcript);
+        console.log('result ', result[0].transcript);
     }
 };
 headerBtn.addEventListener("click", () => {
