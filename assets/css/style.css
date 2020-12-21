@@ -268,6 +268,7 @@ header
 .header__portfolio-link{
     color: var(--link);
 }
+.header__item::before,
 .header__item::after{
     position: absolute;
     content: "";
@@ -276,11 +277,26 @@ header
     width: 0%;
     height: 2px;
     background-color: var(--green);
-    transition: left ease .5s, width ease .5s;
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    -ms-transition: all ease .5s;
+    -o-transition: all ease .5s;
 }
-.header__item:hover.header__item::after{
-    width: 100%;
+.header__item_enter::before{
+    width: 50%;
     left: 0;
+}
+.header__item_enter::after{
+    width: 50%;
+}
+.header__item_leave::before{
+    width: 0;
+    left: 0;
+}
+.header__item_leave::after{
+    width: 0;
+    left: 100%;
 }
 .header__btn{
     width: auto;

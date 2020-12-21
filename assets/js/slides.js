@@ -30,6 +30,32 @@ document.body.onload = () => {
 
 
 
+
+
+
+
+// header items hover
+const headerItem = document.querySelectorAll(".header__item");
+headerItem.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+        item.classList.remove("header__item_leave")
+        item.classList.add("header__item_enter")
+    })
+    item.addEventListener("mouseleave", () => {
+        item.classList.remove("header__item_enter")
+        item.classList.add("header__item_leave")
+        setTimeout(() => {
+            item.classList.remove("header__item_leave")
+        }, 500)
+    })
+})
+
+
+
+
+
+
+
 // header panel 
 const header = document.querySelector(".header");
 const headerPanel = document.querySelector(".header__panel");
