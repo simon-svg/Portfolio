@@ -33,7 +33,6 @@ document.body.onload = () => {
 
 
 
-
 // header items hover
 const headerItem = document.querySelectorAll(".header__item");
 headerItem.forEach((item) => {
