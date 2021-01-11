@@ -880,7 +880,6 @@ projects page ------------------------------------------------------------------
 
 .projects-page{
     width: 100%;
-    padding-top: 70px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--inside-item);
