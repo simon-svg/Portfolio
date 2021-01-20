@@ -10,7 +10,7 @@
         justify-content: flex-start;
         margin-left: 20px;
     }
-    .header__btn{
+    .header__btn_cont{
         margin-right: 5px;
     }
     .header__item{
@@ -89,7 +89,7 @@
     .form__input,
     .form__btn{
         padding: 10px;
-        font-size: 15px;
+        font-size: 14px;
     }
     .form__name,
     .form__email{
@@ -118,10 +118,10 @@
         margin-bottom: 70px;
     }
     .home__title{
-        font-size: 55px;
+        font-size: 53px;
     }
     .home__subtitle{
-        font-size: 18px;
+        font-size: 17px;
         margin: 60px 0;
     }
     .home__cont{
@@ -132,20 +132,20 @@
     }
     .home__info_item{
         line-height: 30px;
-        font-size: 18px;
+        font-size: 17px;
     }
     .home__cont_info{
         margin: 40px 0;
     }
     .title__head{
-        font-size: 40px;
+        font-size: 38px;
     }
     .subtitle{
-        font-size: 20px;
+        font-size: 19px;
         margin-top: 25px;
     }
     .educ-exper-mob__item_name{
-        font-size: 20px;
+        font-size: 19px;
     }
     .certific-projects__cont{
         flex-direction: column;
@@ -193,22 +193,22 @@
     }
     .home__info_item{
         line-height: 20px;
-        font-size: 14px;
+        font-size: 13px;
     }
     .btn{
         width: 210px;
-        font-size: 20px;
+        font-size: 19px;
     }
     .footer__inside{
         margin-left: 50px;
-        font-size: 16px;
+        font-size: 15px;
     }
     .title__head{
-        font-size: 30px;
+        font-size: 28px;
         letter-spacing: 3px;
     }
     .subtitle{
-        font-size: 16px;
+        font-size: 15px;
         letter-spacing: 3px;
     }
     .home__subtitle{

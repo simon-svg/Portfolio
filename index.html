@@ -99,9 +99,17 @@
 
     <main>
         <div class="header__panel_cont flex">
-            <button class="btn header__btn flex">
-                <span class="btn__span header__btn_span">voice</span>
-            </button>
+            <div class="header__btn_cont">
+                <button class="btn header__btn flex">
+                    <span class="btn__span header__btn_span">voice</span>
+                </button>
+                <span class="header__btn_line"></span>
+                <button class="btn header__light_cont flex">
+                    <span class="btn__span header__btn_span">
+                        <i class="header__light_icon fas fa-sun"></i>
+                    </span>
+                </button>
+            </div>
             <div class="header__panel">
                 <i class="header__panel_icon fa fa-angle-up"></i>
             </div>
@@ -529,8 +537,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/parallax.min.js"></script>
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/slides.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

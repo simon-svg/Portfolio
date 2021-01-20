@@ -13,7 +13,7 @@ document.body.onload = () => {
     setTimeout(() => {
         body.style["overflow-y"] = "scroll";
         loader.style.display = "none";
-        document.querySelector(".loader__infinity").remove()
+        document.querySelector(".loader__infinity").style.display = "none";
     }, 500)
 
     if (document.title === "Portfolio") {
@@ -157,3 +157,38 @@ document.addEventListener("click", () => {
     mobileNavClose();
     headertBurgerBool = true;
 })
+
+
+
+
+// header light button
+const html = document.querySelector("html");
+const homeTitle = document.querySelector(".home__title");
+const footerInside = document.querySelector(".footer__inside");
+const headerBtnSpan = document.querySelector(".header__btn_span");
+const headerLight = document.querySelector(".header__light_cont");
+const headerLightIcon = document.querySelector(".header__light_icon");
+const sections = document.querySelectorAll("section");
+let headerLightBool = true;
+
+
+function light(){
+    html.style.setProperty("--dark-gray", "#ffffff");
+    html.style.setProperty("--gray-hover", "#cccccc");
+    html.style.setProperty("--inside-item", "#979797");
+    html.style.setProperty("--responseColor", "#a8a8a8");
+    footerInside.style["background-image"] = "linear-gradient(to right, var(--green), var(--green) 49%, var(--inside-item) 50%)";
+}
+function dark(){
+    html.style.setProperty("--dark-gray", "#46484A");
+    html.style.setProperty("--gray-hover", "#565758");
+    html.style.setProperty("--inside-item", "#3e4144");
+}
+
+
+if (localStorage.getItem("portfolioLight") == "sun") {
+    dark();
+}
+else if (localStorage.getItem("portfolioLight") == "moon") {
+    light();
+}

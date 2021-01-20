@@ -349,20 +349,20 @@ for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             if (i !== j) {
                 educExperInside[j].style.height = "0";
-                educExper[j].style.backgroundColor = "rgb(62, 65, 68)";
-                educExperArrow[j].style.backgroundColor = "rgb(72, 74, 77)";
+                educExper[j].style.backgroundColor = "var(--inside-item)";
+                educExperArrow[j].style.backgroundColor = "var(--responseColor)";
                 educExperIcon[j].style.transform = "rotate(0deg)";
             } else {
                 educExperInside[i].style.height = "110px";
-                educExper[i].style.backgroundColor = "rgb(72, 74, 77)";
-                educExperArrow[i].style.backgroundColor = "rgb(62, 65, 68)";
+                educExper[i].style.backgroundColor = "var(--responseColor)";
+                educExperArrow[i].style.backgroundColor = "var(--inside-item)";
                 educExperIcon[i].style.transform = "rotate(180deg)";
             }
         }
         if (selectedElem === educExper[i]) {
             educExperInside[i].style.height = "0";
-            educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
-            educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
+            educExper[i].style.backgroundColor = "var(--inside-item)";
+            educExperArrow[i].style.backgroundColor = "var(--responseColor)";
             educExperIcon[i].style.transform = "rotate(0deg)";
             selectedElem = null;
         } else {
@@ -379,21 +379,21 @@ for (let i = 4; i < educExper.length; i++) {
         for (let j = 4; j < educExper.length; j++) {
             if (i !== j) {
                 educExperInside[j].style.height = "0";
-                educExper[j].style.backgroundColor = "rgb(62, 65, 68)";
-                educExperArrow[j].style.backgroundColor = "rgb(72, 74, 77)";
+                educExper[j].style.backgroundColor = "var(--inside-item)";
+                educExperArrow[j].style.backgroundColor = "var(--responseColor)";
                 educExperIcon[j].style.transform = "rotate(0deg)";
             }
             else {
                 educExperInside[i].style.height = "110px";
-                educExper[i].style.backgroundColor = "rgb(72, 74, 77)";
-                educExperArrow[i].style.backgroundColor = "rgb(62, 65, 68)";
+                educExper[i].style.backgroundColor = "var(--responseColor)";
+                educExperArrow[i].style.backgroundColor = "var(--inside-item)";
                 educExperIcon[i].style.transform = "rotate(180deg)";
             }
         }
         if (selectedElem2 === educExper[i]) {
             educExperInside[i].style.height = "0";
-            educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
-            educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
+            educExper[i].style.backgroundColor = "var(--inside-item)";
+            educExperArrow[i].style.backgroundColor = "var(--responseColor)";
             educExperIcon[i].style.transform = "rotate(0deg)";
             selectedElem2 = null;
         } else {
@@ -407,8 +407,8 @@ for (let i = 4; i < educExper.length; i++) {
 document.addEventListener("click", () => {
     for (let i = 0; i < educExper.length; i++) {
         educExperInside[i].style.height = "0";
-        educExper[i].style.backgroundColor = "rgb(62, 65, 68)";
-        educExperArrow[i].style.backgroundColor = "rgb(72, 74, 77)";
+        educExper[i].style.backgroundColor = "var(--inside-item)";
+        educExperArrow[i].style.backgroundColor = "var(--responseColor)";
         educExperIcon[i].style.transform = "rotate(0deg)";
     }
     selectedElem = null;
@@ -604,3 +604,77 @@ recognizer.onresult = function (event) {
 headerBtn.addEventListener("click", () => {
     recognizer.start();
 })
+
+
+
+
+
+
+
+
+function light() {
+    sections[0].setAttribute("data-image-src", "assets/media/img/bg/lightMode/2.png")
+    sections[1].setAttribute("data-image-src", "assets/media/img/bg/lightMode/1.png")
+    sections[2].setAttribute("data-image-src", "assets/media/img/bg/lightMode/4.png")
+    sections[3].setAttribute("data-image-src", "assets/media/img/bg/lightMode/3.png")
+    sections[4].setAttribute("data-image-src", "assets/media/img/bg/lightMode/6.png")
+    sections[5].setAttribute("data-image-src", "assets/media/img/bg/lightMode/5.png")
+    sections[6].setAttribute("data-image-src", "assets/media/img/bg/lightMode/7.png")
+    sections[7].setAttribute("data-image-src", "assets/media/img/bg/lightMode/8.png")
+    html.style.setProperty("--dark-gray", "#ffffff");
+    html.style.setProperty("--gray-hover", "#cccccc");
+    html.style.setProperty("--inside-item", "#979797");
+    html.style.setProperty("--responseColor", "#a8a8a8");
+    educExperArrow.forEach((item, i) => {
+        item.style.backgroundColor = "#ffffff";
+        educExperIcon[i].style.color = "#000000";
+    })
+    footerInside.style["background-image"] = "linear-gradient(to right, var(--green), var(--green) 49%, var(--inside-item) 50%)";
+}
+function dark() {
+    sections[0].setAttribute("data-image-src", "assets/media/img/bg/2.jpg")
+    sections[1].setAttribute("data-image-src", "assets/media/img/bg/4.jpg")
+    sections[2].setAttribute("data-image-src", "assets/media/img/bg/7.jpg")
+    sections[3].setAttribute("data-image-src", "assets/media/img/bg/3.jpg")
+    sections[4].setAttribute("data-image-src", "assets/media/img/bg/9.jpg")
+    sections[5].setAttribute("data-image-src", "assets/media/img/bg/1.jpg")
+    sections[6].setAttribute("data-image-src", "assets/media/img/bg/8.jpg")
+    sections[7].setAttribute("data-image-src", "assets/media/img/bg/6.jpg")
+    html.style.setProperty("--dark-gray", "#46484A");
+    html.style.setProperty("--gray-hover", "#565758");
+    html.style.setProperty("--inside-item", "#3e4144");
+    educExperArrow.forEach((item) => {
+        item.style.backgroundColor = "var(--responseColor) !important";
+    })
+}
+
+
+
+headerLight.addEventListener("click", () => {
+    loader.style.opacity = "1";
+    loader.style.display = "flex";
+    document.querySelector(".loader__infinity").style.display = "block";
+    if (headerLightBool) {
+        headerLightIcon.setAttribute("class", "header__light_icon fas fa-moon");
+        localStorage.setItem("portfolioLight", "moon");
+        light();
+    }
+    else {
+        headerLightIcon.setAttribute("class", "header__light_icon fas fa-sun");
+        localStorage.setItem("portfolioLight", "sun");
+        dark();
+    }
+    headerLightBool = !headerLightBool;
+    location.reload();
+})
+
+if (localStorage.getItem("portfolioLight") == "sun") {
+    headerLightIcon.setAttribute("class", "header__light_icon fas fa-sun");
+    headerLightBool = true;
+    dark();
+}
+else if (localStorage.getItem("portfolioLight") == "moon") {
+    headerLightIcon.setAttribute("class", "header__light_icon fas fa-moon");
+    headerLightBool = false;
+    light();
+}

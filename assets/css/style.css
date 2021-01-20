@@ -10,6 +10,7 @@ html{
     --green-hover: #00FF57;
     --link: #A0B7CA;
     --inside-item: #3e4144;
+    --responseColor: #484a4e;
 }
 .wrapper{
     width: 980px;
@@ -298,11 +299,71 @@ header
     width: 0;
     left: 100%;
 }
-.header__btn{
-    width: auto;
-    height: auto;
-    padding: 10px 20px;
+.header__btn_cont{
     margin-right: 20px;
+    position: relative;
+}
+.header__btn_line{
+    display: inline-block;
+    width: 2px;
+    height: 0px;
+    background-color: var(--link);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    -ms-transition: all ease .5s;
+    -o-transition: all ease .5s;
+}
+.header__btn_cont:hover .header__light_cont{
+    visibility: visible;
+    opacity: 1;
+}
+.header__btn_cont:hover .header__btn_line{
+    height: 13px;
+    bottom: -13px;
+}
+.header__light_cont{
+    position: absolute;
+    left: 50%;
+    bottom: -55px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    -ms-transition: all ease .5s;
+    -o-transition: all ease .5s;
+}
+.header__light_icon{
+    font-size: 20px;
+    transition: color ease .5s;
+    -webkit-transition: color ease .5s;
+    -moz-transition: color ease .5s;
+    -ms-transition: color ease .5s;
+    -o-transition: color ease .5s;
+}
+.header__light_cont:hover .header__light_icon{
+    color: var(--white);
+}
+.header__btn,
+.header__light_cont{
+    width: 95px;
+    height: auto;
+    padding: 10px 0;
+    justify-content: center;
 }
 .header__btn_span{
     transition: color ease .5s;
@@ -883,6 +944,7 @@ projects page ------------------------------------------------------------------
     display: flex;
     flex-wrap: wrap;
     background-color: var(--inside-item);
+    padding-top: 70px;
     transition: padding ease 0.5s;
 }
 .projects-page__cont{
