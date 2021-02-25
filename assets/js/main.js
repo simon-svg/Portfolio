@@ -230,7 +230,7 @@ window.addEventListener("scroll", (e) => {
             skillsItemLine[6].style.width = "17%";
         }, 300)
         setTimeout(() => {
-            skillsItemLine[7].style.width = "23%";
+            skillsItemLine[7].style.width = "39%";
         }, 350)
         setTimeout(() => {
             skillsItemLine[8].style.width = "45%";
